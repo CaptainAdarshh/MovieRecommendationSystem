@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block bodyblock %}
+<div class="heading-image">
+<img src="{% static 'heading.png' %}" alt="heading"></div>
+
+<div class="button-index">
+
+<button class="button-82-pushable" role="link">
+  <span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span>
+  <span class="button-82-front text">
+  <a style="text-decoration:none"  href="{% url 'moviekey' %}">Movie Keywords</a>
+  </span>
+</button>
+<button class="button-82-pushable" role="link">
+  <span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span>
+  <span class="button-82-front text">
+  <a style="text-decoration:none"  href="{% url 'movieplot' %}">Movie Plot</a>
+  </span>
+</button>
+<button class="button-82-pushable" role="link">
+  <span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span>
+  <span class="button-82-front text">
+  <a style="text-decoration:none"  href="{% url 'toptenvoted' %}">Top Ten Voted</a>
+  </span>
+</button>
+<button class="button-82-pushable" role="link">
+  <span class="button-82-shadow"></span>
+  <span class="button-82-edge"></span>
+  <span class="button-82-front text">
+  <a style="text-decoration:none"  href="{% url 'toptenpopular' %}">Top Ten Popular</a>
+  </span>
+</button>
+</div>
+{% endblock %}

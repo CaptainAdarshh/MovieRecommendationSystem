@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block bodyblock %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h4 class='movname'>Movie Name</h4>
+    {% comment %} <textarea type="textarea" placeholder="Inception" name="input" rows="4" cols="50">{{inp}}</textarea>
+    <h5>According to which movie's plot you want your recommendations to be like.</h5>
+    <button type="submit">Submit</button> {% endcomment %}
+    <div class="wrapper">
+      <div class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input type="text" placeholder="Harry Potter.." name="input" autocomplete="off">
+        <div class="autocom-box">
+          <!-- here list are inserted from javascript -->
+        </div>
+        <div class="icon"><button  class="form-submit-button" type="submit"><img src="{% static 'search.png' %}" alt="a" width=110%></button></div>
+      </div>
+    </div>
+        <h5 class='movname2'>According to which movie's plot you want your recommendations to be like.</h5>
+
+
+</form>
+
+{% if check %}
+<h1 class='movname3'>Recommended Movies</h1>
+<h4 class='movname4'>Movies that have the similar Plot</h4>
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Movie</th>
+    </tr>
+
+{% for x,y in data %}
+<tr>
+<th>{{x}}</th>
+<th>{{y}}</th>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+    <script src="{% static 'suggestions2.js'%}"></script>
+    <script src="{% static 'script2.js'%}"></script>
+{% endblock %}

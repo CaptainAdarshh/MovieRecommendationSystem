@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block bodyblock %}
+<div class="top-ten">
+<div class="top-ten-head, heading">
+<h1>Top Ten Movies based on the user Votings</h1></div>
+
+<div class="top-ten-head1">
+
+{% for a,b,c,d,e in data %}
+
+<div class="card-group">
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{a}}</h5>
+        <p class="card-text">Vote Count: {{b}}</p>
+        <p class="card-text">Vote average: {{c}}</p>
+        <p class="card-text, score">Score : {{d}}</p>
+    </div>
+</div>
+</div>
+
+
+
+{% endfor %}
+
+</div>
+</div>
+{% endblock %}
